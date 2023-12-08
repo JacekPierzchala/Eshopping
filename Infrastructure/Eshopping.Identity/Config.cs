@@ -20,7 +20,7 @@ namespace Eshopping.Identity
             new ApiScope[]
             {
                 new ApiScope("catalogapi"),
-    
+  
             };
 
         public static IEnumerable<ApiResource> ApiResources =>
@@ -29,7 +29,7 @@ namespace Eshopping.Identity
                 //lis of microservices
                 new ApiResource("Catalog","Catalog.API")
                 {
-                    Scopes={ "catalogapi" }
+                   Scopes = { "catalogapi" }
                 }
             };
         public static IEnumerable<Client> Clients =>
@@ -39,10 +39,10 @@ namespace Eshopping.Identity
                new Client
                {
                    ClientName = "Catalog API Client",
-                   ClientId="CatalogAPIClient",
-                   ClientSecrets={new Secret("f449d97a-1bbf-45db-8761-ad8905c7fee2".Sha256()) },
+                   ClientId="CatalogApiClient",
+                   ClientSecrets={new Secret("5c6ec4c5-61a7-4668-ac57-2b4591ec26d2".Sha256()) },
                    AllowedGrantTypes=GrantTypes.ClientCredentials,
-                   AllowedScopes={ "catalogapi" }
+                   AllowedScopes = {"catalogapi"}
                }
             };
     }
