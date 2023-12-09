@@ -45,7 +45,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         opt.Audience = "Catalog";
     });
 
-
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("CanRead", policy => policy.RequireClaim("scope", "catalogapi"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
